@@ -168,8 +168,6 @@
     font-size: 11px;
     color: var(--text2);
     line-height: 1.45;
-    display: block;
-    overflow: visible;
     margin-bottom: 10px;
   }
   .card-footer {
@@ -345,7 +343,16 @@ const productos = [
   {id:10027, nombre:"Dip Salsa Bocado",   cat:"Dips",    precio:1200,  desc:"Para acompañar lo que quieras.",                                                                                    img:"dip-bocado.jpg"},
 ];
 
-// Clasificación automática por tipo de burger\nproductos.forEach(p => {\n  if (p.cat === "Burgers") {\n    if (p.nombre.includes("Simple")) p.cat = "Simples";\n    else if (p.nombre.includes("Doble")) p.cat = "Dobles";\n    else if (p.nombre.includes("Triple")) p.cat = "Triples";\n  }\n});\n\nconst cats = ["Todos", "Combos", "Simples", "Dobles", "Triples", "Extras", "Dips"];
+const cats = ["Todos", "Combos", "Simples", "Dobles", "Triples", "Extras", "Dips"];
+
+// Separar hamburguesas por tipo
+productos.forEach(p => {
+  if (p.cat === "Burgers") {
+    if (p.nombre.includes("Simple")) p.cat = "Simples";
+    else if (p.nombre.includes("Doble")) p.cat = "Dobles";
+    else if (p.nombre.includes("Triple")) p.cat = "Triples";
+  }
+});
 const carrito = {};
 let catActiva = "Todos";
 
@@ -446,5 +453,4 @@ renderCats();
 renderGrid();
 </script>
 </body>
-Bocado burgers
 </html>
