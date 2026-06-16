@@ -444,7 +444,7 @@ document.getElementById("wa-btn").onclick = function () {
     return s + (p ? p.precio * q : 0);
   }, 0);
   const total = subtotal + ENVIO;
-  const msg = `¡Hola! 🧾 Mi Pedido: 🍔\n\n${lineas.join("\n")}\n\nEnvío: ${fmtP(ENVIO)}\n*Total: ${fmtP(total)}*`;
+  const msg = `¡Hola! 👋 Mi Pedido: \n\n${lineas.join("\n")}\n\nEnvío: ${fmtP(ENVIO)}\n*Total: ${fmtP(total)}*`;
   window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
 };
 
